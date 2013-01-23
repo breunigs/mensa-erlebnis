@@ -22,14 +22,14 @@ Die `updater.rb` muss regelmäßig per Cron-Job aufgerufen werden. Das Front-End
 
 Beim Testen empfiehlt es sich in der `magic.js` diese Zeilen auszukommentieren:
 
-    ```javascript
-    $("iframe").attr("src", "form.html");
-    ```
+```javascript
+$("iframe").attr("src", "form.html");
+```
 
 und
 
-    ```javascript
-    i.find("input[name=SW_LOB_SUBJECT]").val("Mein Mensa-Erlebnis");`
-    ```
+```javascript
+i.find("input[name=SW_LOB_SUBJECT]").val("Mein Mensa-Erlebnis");`
+```
 
 Dann weist der Server des StuWes die Anfrage zurück, da der Betreff fehlt. Außerdem kann man sich anschauen, ob Texte übernommen wurden und sonst alles geklappt hat.

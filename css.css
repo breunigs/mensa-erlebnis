@@ -1,0 +1,75 @@
+.ui-header .ui-controlgroup-horizontal {
+  padding:0.2em !important;
+  margin:0 !important;
+}
+
+.spacing {
+  padding:0.2em !important;
+}
+
+.spacing .ui-btn {
+  margin:0 !important;
+}
+
+.ui-header .ui-controlgroup-controls {
+  width:100%;
+}
+
+.ui-header .ui-radio {
+  width:33.33333333333333333333333333333333333333333333333333333333333%;
+}
+
+.hint {
+  text-align:center;
+  display:block;
+  color:#B6B6B6;
+}
+
+small {
+  font-weight:normal;
+}
+
+textarea {
+  min-height:7em;
+}
+
+p {
+  text-align: justify;
+}
+
+iframe {
+  z-index:9999;
+  position:absolute;
+  bottom:-500px;
+  right:0;
+  width:50%;
+  height:200px;
+  background:white;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+  font-style:italic
+}
+:-moz-placeholder {
+  color: #999;
+  font-style:italic
+}
+::-moz-placeholder {
+  color: #999;
+  font-style:italic
+}
+:-ms-input-placeholder {
+  color: #999;
+  font-style:italic
+}
+
+.ui-page {
+  max-width:35em;
+  position:relative !important;
+}
+
+body {
+  max-width:35em;
+  margin:0 auto !important;
+}

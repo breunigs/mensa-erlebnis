@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bewerten Sie Ihr Mensa Erlebnis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+  <link rel="stylesheet" href="css.css" />
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  <script src="data.json"></script>
+  <script src="magic.js"></script>
+</head>
+<body>
+  <form data-role="page" method="post" onsubmit="return false">
+    <div data-role="header" class="ui-hide-label aufgang-chooser">
+      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
+        <legend>Wähle Aufgang/Ausgabe:</legend>
+        <input type="radio" name="aufgang" id="aufgang-ab" value="AB" checked="checked"/>
+        <label for="aufgang-ab">A/B Buffet</label>
+        <input type="radio" name="aufgang" id="aufgang-d" value="D" />
+        <label for="aufgang-d">D Menü</label>
+        <input type="radio" name="aufgang" id="aufgang-e" value="E" />
+        <label for="aufgang-e">E Auswahl</label>
+      </fieldset>
+
+    </div>
+
+    <div data-role="collapsible-set" id="aufgang-details">
+      <div data-role="collapsible" data-collapsed="false"   class="details-aufgang-ab">
+        <div data-role="content" class="ui-hide-label">
+          <fieldset data-role="controlgroup">
+           <legend>Detail:</legend>
+           <input type="checkbox" name="ab-kategorie" id="ab-suppen" value="Suppen"/>
+           <label for="ab-suppen">Suppen</label>
+
+           <input type="checkbox" name="ab-kategorie" id="ab-salatbar" value="Salaten"/>
+           <label for="ab-salatbar">Salatbar</label>
+
+           <input type="checkbox" name="ab-kategorie" id="ab-fleisch" value="Fleischgerichten"/>
+           <label for="ab-fleisch">Fleischgerichte</label>
+
+           <input type="checkbox" name="ab-kategorie" id="ab-fisch" value="Fischgerichten"/>
+           <label for="ab-fisch">Fischgerichte</label>
+
+           <input type="checkbox" name="ab-kategorie" id="ab-veget" value="vegetarischen Spezialitäten" />
+           <label for="ab-veget">Vegetarische Gerichte</label>
+
+           <input type="checkbox" name="ab-kategorie" id="ab-beilagen" value="Beilagen"/>
+           <label for="ab-beilagen">Beilagen</label>
+
+           <input type="checkbox" name="ab-kategorie" id="ab-nachtisch" value="Nachtischen"/>
+           <label for="ab-nachtisch">Nachtisch</label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div data-role="collapsible" data-collapsed="true"   class="details-aufgang-d">
+        <div data-role="content" class="ui-hide-label">
+          <fieldset data-role="controlgroup">
+            <legend>Menü:</legend>
+            <input type="radio" name="d-gericht" id="d-fleisch" value="fleisch" />
+            <label for="d-fleisch">
+              Fleisch- und Fischgericht<br/>
+              <small id="d-fleisch-text"></small>
+            </label>
+
+            <input type="radio" name="d-gericht" id="d-veget" value="veget" />
+            <label for="d-veget">
+              Vegetarisches Gericht<br/>
+              <small id="d-veget-text"></small>
+            </label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div data-role="collapsible" data-collapsed="true"  class="details-aufgang-e">
+        <div data-role="content" class="ui-hide-label">
+          <fieldset data-role="controlgroup">
+            <legend>Gericht:</legend>
+            <input type="radio" name="e-gericht" id="e-fleisch" value="fleisch"/>
+            <label for="e-fleisch">
+              Fleisch- und Fischgericht<br/>
+              <small id="e-fleisch-text"></small></label>
+
+            <input type="radio" name="e-gericht" id="e-veget" value="veget"/>
+            <label for="e-veget">
+              Vegetarisches Gericht<br/>
+              <small id="e-veget-text"></small>
+            </label>
+          </fieldset>
+
+          <fieldset data-role="controlgroup" id="e-beilagen-cont">
+           <legend>Beilagen:</legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div data-role="header" class="ui-hide-label">
+      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
+        <legend>Stimmung:</legend>
+        <input type="radio" name="stimmung" id="stimmung-lob" value="Lob" />
+        <label for="stimmung-lob">Lob</label>
+        <input type="radio" name="stimmung" id="stimmung-neutral" value="Neutral" checked="checked" />
+        <label for="stimmung-neutral">Neutral</label>
+        <input type="radio" name="stimmung" id="stimmung-tadel" value="Tadel" />
+        <label for="stimmung-tadel">Tadel</label>
+      </fieldset>
+    </div>
+
+    <div data-role="content">
+      <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="mitteilung">Mitteilung:</label>
+        <textarea name="mitteilung" id="mitteilung" placeholder="Optionale Mitteilung"></textarea>
+      </div>
+    </div>
+
+    <div data-role="header" >
+      <fieldset class="spacing">
+      <button type="submit" data-theme="b" name="submit" value="submit-value" data-mini="false" data-icon="arrow-r" data-iconpos="right">Abschicken</button>
+      </fieldset>
+    </div>
+
+    <div data-role="content">
+      <p><small><b>Warum?</b> Das Studentenwerk hat ein eigenes <a href="http://www.studentenwerk.uni-heidelberg.de/zv_portal/zv?zv_action=CH_PAGE&zv_value=SWD_HD_Essen_HD_LobTadel">Lob und Tadel Formular</a>, das sie aber kaum bewerben und das sich mit dem Handy nicht gut benutzen lässt. Wir finden einen einfachen Rückkanal wichtig, damit die Mensa sich verbessern kann.<br/>Auf <a href="http://allesdreck.de">allesdreck.de</a> findet ihr auch den heutigen Speiseplan. Die Seite ist aber von jemand anderem.</small></p>
+
+      <p><small><b>Datenschutz</b> Ich bin nicht das Studentenwerk, aber ich missbrauche Deine Daten nicht. Genau genommen laufen sie gar nicht über den Server, sondern werden direkt an das Studentenwerk gesendet. <i>Diese</i> Seite speichert auch Deine IP Adresse nicht, allerdings werden einige Sachen von einem fremden Netzwerk geladen. Über dieses weiß ich nichts, aber es sollte Deine Eingaben auch nicht erhalten.</small></p>
+
+      <p><small><b>Source Code</b> Mensa-Erlebnis ist unter der <a data-ajax="false" href="LICENSE">freien ISC Lizenz</a> verfügbar. Der <a href="https://github.com/breunigs/mensa-erlebnis">Source Code findet sich auf Github</a>.</small></p>
+    </div>
+  </form>
+  <script>
+    $("#d-fleisch-text").html(data["d"]["fleisch"]);
+    $("#d-veget-text").html(data["d"]["veget"]);
+
+    $("#e-fleisch-text").html(data["e"]["fleisch"]);
+    $("#e-veget-text").html(data["e"]["veget"]);
+
+    s = "";
+    $.each(data["e"]["beilagen"], function(i, e) {
+      s += '<input type="checkbox" name="e-beilage" id="e-beilage-'+e+'" value="'+e+'" />';
+      s += '<label for="e-beilage-'+e+'">'+e+'</label>';
+    });
+    $("#e-beilagen-cont").append(s);
+  </script>
+</body>
+</html>

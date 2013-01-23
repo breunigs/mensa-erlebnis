@@ -92,6 +92,10 @@ $(document).ready(function() {
 
   $("form").submit(function(e) {
     if(submitInProgress) return false;
+
+    if(!confirm("Mensa-Erlebnis so absenden?"))
+      return false;
+
     submitInProgress = true;
     $.mobile.showPageLoadingMsg();
     $('[type="submit"]').button('disable');

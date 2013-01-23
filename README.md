@@ -29,7 +29,7 @@ $("iframe").attr("src", "form.html");
 und
 
 ```javascript
-i.find("input[name=SW_LOB_SUBJECT]").val("Mein Mensa-Erlebnis");`
+i.find("input[name=SW_LOB_SUBJECT]").val("Mein Mensa-Erlebnis");
 ```
 
 Dann weist der Server des StuWes die Anfrage zurück, da der Betreff fehlt. Außerdem kann man sich anschauen, ob Texte übernommen wurden und sonst alles geklappt hat.

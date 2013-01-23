@@ -100,7 +100,7 @@ $(document).ready(function() {
     i.find("form").attr("onsubmit", "");
     i.find("select").val("01|Essen & Trinken");
     $("iframe").contents().find("input[name=zv_action]").val("SW_SEND_FEEDBACK");
-    //i.find("input[name=SW_LOB_SUBJECT]").val("Mein Mensa-Erlebnis");
+    i.find("input[name=SW_LOB_SUBJECT]").val("Mein Mensa-Erlebnis");
     i.find("textarea[name=SW_LOB_COMMENT]").val(getText());
     $("iframe").one("load", function() {
       $.mobile.hidePageLoadingMsg();
@@ -109,7 +109,7 @@ $(document).ready(function() {
       $.mobile.silentScroll(0);
       submitInProgress = false;
       $('[type="submit"]').button('enable');
-      //$("iframe").attr("src", "form.html");
+      $("iframe").attr("src", "form.html");
     });
     // actually submit the form
     i.find("form").submit();

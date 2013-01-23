@@ -38,6 +38,8 @@ p {
 }
 
 iframe {
+  display: none;
+/*
   z-index:9999;
   position:absolute;
   bottom:-500px;
@@ -45,6 +47,7 @@ iframe {
   width:50%;
   height:200px;
   background:white;
+*/
 }
 
 ::-webkit-input-placeholder {

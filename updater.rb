@@ -27,13 +27,15 @@ class String
   end
 end
 
+a = Mechanize.new
+a.content_encoding_hooks << lambda{|httpagent, uri, response, body_io|
+  response['content-encoding'] = nil if response['content-encoding'] == 'ISO-8859-15'
+}
+
+
+
 unless Date.today.saturday? || Date.today.sunday?
   data = {}
-
-  a = Mechanize.new
-  a.content_encoding_hooks << lambda{|httpagent, uri, response, body_io|
-    response['content-encoding'] = nil if response['content-encoding'] == 'ISO-8859-15'
-  }
 
   a.get(plan) do |page|
     # iterate over table rows
